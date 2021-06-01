@@ -12,15 +12,14 @@ using BLMock.Models;
 namespace BLMock.Controllers
 {
     [ApiController]
-    //[Route("[controller]")]
 
     public class MockController : ControllerBase
     {
-        private static string _notificationFileName = "notification.json";
+        private static string _notificationFileName = "notification1.json";
 
         [HttpGet]
         [Route("api/v2/notifications")]
-        public NotificationPage GetNotifications([FromQuery] string from_datetime, string to_datetime, string p)
+        public IActionResult GetNotifications([FromQuery] string from_datetime, string to_datetime, string p)
         {
             string filePath;
 
@@ -42,12 +41,12 @@ namespace BLMock.Controllers
             
             var json =  System.IO.File.ReadAllText(filePath);
 
-            return JsonConvert.DeserializeObject<NotificationPage>(json);
+            return Ok(JObject.Parse(json));
         }
 
         [HttpGet]
         [Route("api/v2/orders/{id}")]
-        public Order GetOrders(string id)
+        public IActionResult GetOrders(string id)
         {
             string filePath = Path.Combine("Responses", "orders", $"{id}.json");
 
@@ -58,7 +57,7 @@ namespace BLMock.Controllers
 
             var json = System.IO.File.ReadAllText(filePath);
 
-            return JsonConvert.DeserializeObject<Order>(json);
+            return Ok(JObject.Parse(json));
         }
 
         [HttpPost]
