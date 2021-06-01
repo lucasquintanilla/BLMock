@@ -1,0 +1,61 @@
+{
+    "properties": {
+        "count": 4,
+        "records": 14,
+        "current_page": "3"
+    },
+    "notifications": [
+        {
+            "id": "1000000000011-01",
+            "oms_id": 1000011,
+            "external_id": "1000000000011-01",
+            "channel_brand_id": 135,
+            "channel_name": "Nike CL",
+            "is_spu": false,
+            "spu_id": null,
+            "spu_transaction_id": null,
+            "spu_from": null,
+            "spu_to": null,
+            "created_at": "2021-05-28 12:00:11"
+        },
+        {
+            "id": "REV_1000012_0",
+            "oms_id": 1000012,
+            "external_id": "REV_1000012_0",
+            "channel_brand_id": 135,
+            "channel_name": "Nike CL",
+            "is_spu": false,
+            "spu_id": null,
+            "spu_transaction_id": null,
+            "spu_from": null,
+            "spu_to": null,
+            "created_at": "2021-05-28 12:00:12"
+        },
+        {
+            "id": "REV_1000013_0",
+            "oms_id": 1000013,
+            "external_id": "REV_1000013_0",
+            "channel_brand_id": 135,
+            "channel_name": "Nike CL",
+            "is_spu": false,
+            "spu_id": null,
+            "spu_transaction_id": null,
+            "spu_from": null,
+            "spu_to": null,
+            "created_at": "2021-05-28 12:00:03"
+        },
+        {
+            "id": "REV_1000014_0",
+            "oms_id": 1000014,
+            "external_id": "REV_1000014_0",
+            "channel_brand_id": 139,
+            "channel_name": "Nike CL",
+            "is_spu": false,
+            "spu_id": null,
+            "spu_transaction_id": null,
+            "spu_from": null,
+            "spu_to": null,
+            "created_at": "2021-05-28 12:00:04"
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "id": 1000004,
+    "external_id": "1000000000004-01",
+    "is_corporate": false,
+    "status": "shipped",
+    "sub_status": "not_set",
+    "order_type": "direct",
+    "order_amount": "135000.000000",
+    "shipping_amount": "5.000000",
+    "channel_brand": 135,
+    "channel_name": "Nike CL - VTEX",
+    "channel_created_at": "2021-05-19T10:56:09-03:00",
+    "channel_updated_at": "2021-05-20T07:57:27-03:00",
+    "payments": [
+        {
+            "external_id": "D6B5341411894C68A0A29C344E6CD923",
+            "status": "paid",
+            "currency": "CLP",
+            "amount": "135005.000000",
+            "base_amount": "135005.000000",
+            "interest_amount": "0.000000",
+            "method": "Promissory",
+            "type": "promissory",
+            "creditcard_firstdigits": null,
+            "creditcard_lastdigits": null,
+            "installments": 1,
+            "sequence": "500029-0",
+            "gateway_name": "Promissory",
+            "channel_created_at": "2021-05-19T10:56:09-03:00",
+            "channel_updated_at": "2021-05-19T10:56:09-03:00"
+        }
+    ],
+    "orders_item": [
+        {
+            "id": 2000004,
+            "external_id": "5",
+            "sku": "00193658090889",
+            "title": "Nike Court Vintage Premium Talla: 6 - Color: Blanco",
+            "price": "135000.000000",
+            "original_price": "200000.000000",
+            "items_status": [
+                {
+                    "id": 300004,
+                    "sku": "00193658090889",
+                    "status": "confirmed",
+                    "submitted": true
+                },
+                {
+                    "id": 400004,
+                    "sku": "00193658090889",
+                    "status": "b3_stock",
+                    "submitted": true
+                }
+            ],
+            "required_qty": 2,
+            "confirmed_qty": "1",
+            "discounts": [
+                {
+                    "description": "10% OFF Test"
+                }
+            ],
+            "warehouse_id": null
+        }
+    ],
+    "shipping": {
+        "tracking_number": "1133263369232-01",
+        "tracking_url": "https://nikecl.myvtex.com",
+        "status": "ready_to_ship",
+        "address_id": "956500",
+        "message": "La orden fue colocada en un lote correctamente",
+        "courier": "STANDARD",
+        "method": "1",
+        "label_url": []
+    },
+    "order_address": [
+        {
+            "id": 956500,
+            "type": "shipping",
+            "address_1": "STREET",
+            "address_number_1": "123123",
+            "zip_code": "8320000",
+            "country": "CL",
+            "city": "",
+            "state": "Region Metropolitana",
+            "state_iso": "CL-RM",
+            "comments": "3D, Santiago",
+            "receiver_name": "matias rodriguez riccio",
+            "receiver_phone": null
+        }
+    ],
+    "customer": {
+        "id": 806982,
+        "firstname": "Matias",
+        "lastname": "Rodriguez Riccio",
+        "email": "mriccio@brandlive.net",
+        "nickname": "",
+        "phone_1": "+56222996965",
+        "phone_2": "",
+        "doc_type": "rutCHL",
+        "doc_number": "123123123",
+        "created_at": "2021-05-19T12:51:05-03:00",
+        "corporate": []
+    }
+}

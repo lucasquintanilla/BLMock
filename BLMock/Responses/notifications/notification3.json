@@ -1,0 +1,22 @@
+{
+    "properties": {
+        "count": 1,
+        "records": 1,
+        "current_page": "1"
+    },
+    "notifications": [
+        {
+            "id": "1000000000003-01",
+            "oms_id": 1000003,
+            "external_id": "1000000000003-01",
+            "channel_brand_id": 135,
+            "channel_name": "Nike CL",
+            "is_spu": false,
+            "spu_id": null,
+            "spu_transaction_id": null,
+            "spu_from": null,
+            "spu_to": null,
+            "created_at": "2021-05-28 12:00:03"
+        }
+    ]
+}
