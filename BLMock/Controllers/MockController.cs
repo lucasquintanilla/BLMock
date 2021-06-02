@@ -16,6 +16,7 @@ namespace BLMock.Controllers
     public class MockController : ControllerBase
     {
         private static string _notificationFileName = "notification1.json";
+        private static bool _usePagination = false;
 
         [HttpGet]
         [Route("api/v2/notifications")]
@@ -23,16 +24,21 @@ namespace BLMock.Controllers
         {
             string filePath;
 
-            //if (p == null)
-            //{
-            //    filePath = Path.Combine("Responses", "notifications", $"{_notificationFileName}");
-            //}
-            //else
-            //{
-            //    filePath = Path.Combine("Responses", "notifications", $"notificationPage{p}.json");
-            //}
+            if (_usePagination)
+            {
+                if (p == null)
+                {
+                    p = "1";
+                }
 
-            filePath = Path.Combine("Responses", "notifications", $"{_notificationFileName}");
+                filePath = Path.Combine("Responses", "notifications", $"notificationPage{p}.json");
+            }
+            else
+            {
+                filePath = Path.Combine("Responses", "notifications", $"{_notificationFileName}");
+            }
+
+            //filePath = Path.Combine("Responses", "notifications", $"{_notificationFileName}");
 
             if (!System.IO.File.Exists(filePath))
             {
@@ -62,16 +68,19 @@ namespace BLMock.Controllers
 
         [HttpPost]
         [Route("api/v2/notifications")]
-        public IActionResult SetNotification([FromQuery] string fileName)
+        public IActionResult SetNotification([FromQuery] string fileName, string usePagination)
         {
-            if (fileName == null)
+            if (fileName != null)
             {
-                return BadRequest();
+                _notificationFileName = fileName;
             }
 
-            _notificationFileName = fileName;
+            if (usePagination != null && usePagination == "1")
+            {
+                _usePagination = true;
+            }
 
-            return Ok();
+            return Ok(new { FileName = _notificationFileName, UsePagination = _usePagination });
         }
     }
 }
