@@ -38,8 +38,6 @@ namespace BLMock.Controllers
                 filePath = Path.Combine("Responses", "notifications", $"{_notificationFileName}");
             }
 
-            //filePath = Path.Combine("Responses", "notifications", $"{_notificationFileName}");
-
             if (!System.IO.File.Exists(filePath))
             {
                 throw new Exception($"No encontro archivo. Path: {filePath}");
@@ -68,19 +66,28 @@ namespace BLMock.Controllers
 
         [HttpPost]
         [Route("api/v2/notifications")]
-        public IActionResult SetNotification([FromQuery] string fileName, string usePagination)
+        public IActionResult SetNotification([FromBody] MockConfiguration mockConfiguration)
         {
-            if (fileName != null)
+            if (mockConfiguration == null)
             {
-                _notificationFileName = fileName;
+                return BadRequest();
             }
 
-            if (usePagination != null && usePagination == "1")
+            if (mockConfiguration.FileName != null)
             {
-                _usePagination = true;
+                _notificationFileName = mockConfiguration.FileName;
             }
+            
+            _usePagination = mockConfiguration.UsePagination;
+            
 
             return Ok(new { FileName = _notificationFileName, UsePagination = _usePagination });
         }
+    }
+
+    public class MockConfiguration
+    {
+        public string FileName { get; set; }
+        public bool UsePagination { get; set; }
     }
 }
